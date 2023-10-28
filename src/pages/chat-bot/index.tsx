@@ -12,7 +12,7 @@ import { AppBar, Drawer } from "@mui/material";
 import IconButton from "../../components/IconButton";
 import { logo } from "../../assets";
 import MessageInput from "../../components/MessageInput";
-// import { sendMsgToOpenAi } from "../../config/open-ai/conversation";
+import { sendMsgToOpenAi } from "../../config/open-ai/conversation";
 import axios from "axios";
 
 type Page = {
@@ -26,13 +26,13 @@ type Page = {
 export default function ChatBot() {
   
 
-  // const [input ,  setInput] = useState("")
+  const [input ,  setInput] = useState("")
 
 
-  // const handleSend = async () => {
-  //     const res = await sendMsgToOpenAi(input)
-  //     console.log(res)
-  // }
+  const handleSend = async () => {
+      const res = await sendMsgToOpenAi(input)
+      console.log(res)
+  }
 
   const pagesArr: Page[] = [
     {
@@ -123,13 +123,13 @@ export default function ChatBot() {
             </div>
           </div>
           <div className="col-11">
-            {/* <MessageInput
+            <MessageInput
               placeholder="message"
               className="w-100 input_field py-2"
               value={input} 
               onChange={(e: any) => setInput(e.target.value)}
               onClick={handleSend}
-            /> */}
+            />
           </div>
         </div>
         {/* <Routes>
